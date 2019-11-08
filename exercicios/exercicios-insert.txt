@@ -10,6 +10,8 @@ HTML, CSS, Design, JavaScript, Java, C#, MySQL, MongoDB.
 
 A data de nascimento deve ser inferior a data atual.
 
+db.aluna.insertMany(
+[
 {
       "nome": "Julia",
       "dateOfBirth": "1992-04-13T08:30:00.000Z",
@@ -62,4 +64,4 @@ A data de nascimento deve ser inferior a data atual.
         {"titulo": "CSS", "leu":true},
         {"titulo": "Clean Architecture", "leu" :true}
     ]
-}
+}])

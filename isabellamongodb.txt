@@ -1,0 +1,312 @@
+MongoDB shell version v4.2.1
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("25748a20-daa6-4fd2-afc7-279a1c485811") }
+MongoDB server version: 4.2.1
+Server has startup warnings:
+2019-11-04T21:04:59.407-0200 I  CONTROL  [initandlisten]
+2019-11-04T21:04:59.407-0200 I  CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2019-11-04T21:04:59.407-0200 I  CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2019-11-04T21:04:59.407-0200 I  CONTROL  [initandlisten]
+---
+Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+and anyone you share the URL with. MongoDB may use this information to make product
+improvements and to suggest MongoDB products and deployment options to you.
+
+To enable free monitoring, run the following command: db.enableFreeMonitoring()
+To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+
+> show dbs
+admin       0.000GB
+config      0.000GB
+local       0.000GB
+reprograma  0.000GB
+> use reprograma
+switched to db reprograma
+> db.alunas.insertMany(
+...
+... {
+...       "nome": "Julia",
+...       "dateOfBirth": "1992-04-13T08:30:00.000Z",
+...       "nasceuEmSp": true,
+...       "livros": [
+...         {"titulo":"C#" , "leu" : true},
+...         {"titulo": "JavaScript", "leu" :true},
+...         {"titulo": "MySQL", "leu":true},
+...         {"titulo": "Clean Architecture", "leu" :true}
+...     ]
+... },
+... {
+...       "nome": "Silvia",
+...       "dateOfBirth": "1975-07-02T08:30:00.000Z",
+...       "nasceuEmSp": false,
+...       "livros": [
+...         {"titulo":"Design" , "leu" : true},
+...         {"titulo": "Java", "leu":true},
+...         {"titulo": "Clean Architecture", "leu" :true}
+...     ]
+... },
+... {
+...       "nome": "Lucia",
+...       "dateOfBirth": "1997-06-12T08:30:00.000Z",
+...       "nasceuEmSp": true,
+...       "livros": [
+...         {"titulo":"HTML" , "leu" : true},
+...         {"titulo": "JavaScript", "leu" :true},
+...         {"titulo": "Java", "leu":true},
+...         {"titulo": "Clean Architecture", "leu" :true}
+...     ]
+... },
+... {
+...       "nome": "Marcia",
+...       "dateOfBirth": "1990-11-01T08:30:00.000Z",
+...       "nasceuEmSp": false,
+...       "livros": [
+...         {"titulo":"NodeJS" , "leu" : true},
+...         {"titulo": "MongoDB", "leu":true},
+...         {"titulo": "Clean Architecture", "leu" :true}
+...     ]
+... },
+... {
+...       "nome": "Leila",
+...       "dateOfBirth": "1991-08-02T08:30:00.000Z",
+...       "nasceuEmSp": true,
+...       "livros": [
+...         {"titulo":"C#" , "leu" : true},
+...         {"titulo": "JavaScript", "leu" :true},
+...         {"titulo": "CSS", "leu":true},
+...         {"titulo": "Clean Architecture", "leu" :true}
+...     ]
+... })
+2019-11-07T21:26:24.391-0200 E  QUERY    [js] uncaught exception: TypeError: documents.map is not a function :
+DBCollection.prototype.insertMany@src/mongo/shell/crud_api.js:307:17
+@(shell):1:1
+> show collection
+2019-11-07T21:26:40.606-0200 E  QUERY    [js] uncaught exception: Error: don't know how to show [collection] :
+shellHelper.show@src/mongo/shell/utils.js:1139:11
+shellHelper@src/mongo/shell/utils.js:790:15
+@(shellhelp2):1:1
+> show collectionos
+2019-11-07T21:26:48.111-0200 E  QUERY    [js] uncaught exception: Error: don't know how to show [collectionos] :
+shellHelper.show@src/mongo/shell/utils.js:1139:11
+shellHelper@src/mongo/shell/utils.js:790:15
+@(shellhelp2):1:1
+> show collections
+aluna
+> db.aluna.insertMany(
+...
+... {
+...       "nome": "Julia",
+...       "dateOfBirth": "1992-04-13T08:30:00.000Z",
+...       "nasceuEmSp": true,
+...       "livros": [
+...         {"titulo":"C#" , "leu" : true},
+...         {"titulo": "JavaScript", "leu" :true},
+...         {"titulo": "MySQL", "leu":true},
+...         {"titulo": "Clean Architecture", "leu" :true}
+...     ]
+... },
+... {
+...       "nome": "Silvia",
+...       "dateOfBirth": "1975-07-02T08:30:00.000Z",
+...       "nasceuEmSp": false,
+...       "livros": [
+...         {"titulo":"Design" , "leu" : true},
+...         {"titulo": "Java", "leu":true},
+...         {"titulo": "Clean Architecture", "leu" :true}
+...     ]
+... },
+... {
+...       "nome": "Lucia",
+...       "dateOfBirth": "1997-06-12T08:30:00.000Z",
+...       "nasceuEmSp": true,
+...       "livros": [
+...         {"titulo":"HTML" , "leu" : true},
+...         {"titulo": "JavaScript", "leu" :true},
+...         {"titulo": "Java", "leu":true},
+...         {"titulo": "Clean Architecture", "leu" :true}
+...     ]
+... },
+... {
+...       "nome": "Marcia",
+...       "dateOfBirth": "1990-11-01T08:30:00.000Z",
+...       "nasceuEmSp": false,
+...       "livros": [
+...         {"titulo":"NodeJS" , "leu" : true},
+...         {"titulo": "MongoDB", "leu":true},
+...         {"titulo": "Clean Architecture", "leu" :true}
+...     ]
+... },
+... {
+...       "nome": "Leila",
+...       "dateOfBirth": "1991-08-02T08:30:00.000Z",
+...       "nasceuEmSp": true,
+...       "livros": [
+...         {"titulo":"C#" , "leu" : true},
+...         {"titulo": "JavaScript", "leu" :true},
+...         {"titulo": "CSS", "leu":true},
+...         {"titulo": "Clean Architecture", "leu" :true}
+...     ]
+... })
+2019-11-07T21:27:45.307-0200 E  QUERY    [js] uncaught exception: TypeError: documents.map is not a function :
+DBCollection.prototype.insertMany@src/mongo/shell/crud_api.js:307:17
+@(shell):1:1
+> db.aluna.insertMany(
+... [
+... {
+...       "nome": "Julia",
+...       "dateOfBirth": "1992-04-13T08:30:00.000Z",
+...       "nasceuEmSp": true,
+...       "livros": [
+...         {"titulo":"C#" , "leu" : true},
+...         {"titulo": "JavaScript", "leu" :true},
+...         {"titulo": "MySQL", "leu":true},
+...         {"titulo": "Clean Architecture", "leu" :true}
+...     ]
+... },
+... {
+...       "nome": "Silvia",
+...       "dateOfBirth": "1975-07-02T08:30:00.000Z",
+...       "nasceuEmSp": false,
+...       "livros": [
+...         {"titulo":"Design" , "leu" : true},
+...         {"titulo": "Java", "leu":true},
+...         {"titulo": "Clean Architecture", "leu" :true}
+...     ]
+... },
+... {
+...       "nome": "Lucia",
+...       "dateOfBirth": "1997-06-12T08:30:00.000Z",
+...       "nasceuEmSp": true,
+...       "livros": [
+...         {"titulo":"HTML" , "leu" : true},
+...         {"titulo": "JavaScript", "leu" :true},
+...         {"titulo": "Java", "leu":true},
+...         {"titulo": "Clean Architecture", "leu" :true}
+...     ]
+... },
+... {
+...       "nome": "Marcia",
+...       "dateOfBirth": "1990-11-01T08:30:00.000Z",
+...       "nasceuEmSp": false,
+...       "livros": [
+...         {"titulo":"NodeJS" , "leu" : true},
+...         {"titulo": "MongoDB", "leu":true},
+...         {"titulo": "Clean Architecture", "leu" :true}
+...     ]
+... },
+... {
+...       "nome": "Leila",
+...       "dateOfBirth": "1991-08-02T08:30:00.000Z",
+...       "nasceuEmSp": true,
+...       "livros": [
+...         {"titulo":"C#" , "leu" : true},
+...         {"titulo": "JavaScript", "leu" :true},
+...         {"titulo": "CSS", "leu":true},
+...         {"titulo": "Clean Architecture", "leu" :true}
+...     ]
+... }])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("5dc4aa874943c9002cb933c5"),
+                ObjectId("5dc4aa874943c9002cb933c6"),
+                ObjectId("5dc4aa874943c9002cb933c7"),
+                ObjectId("5dc4aa874943c9002cb933c8"),
+                ObjectId("5dc4aa874943c9002cb933c9")
+        ]
+}
+> db.alunas.find({}).sort({ _id : -1 }).limit(3).pretty()
+> db.alunas.find({}).sort({ _id : -1 }).limit(5).pretty()
+> db.alunas.find({}).sort({ _id : -1 }).limit(3).pretty()
+> db.aluna.find({}).sort({ _id : -1 }).limit(3).pretty()
+{
+        "_id" : ObjectId("5dc4aa874943c9002cb933c9"),
+        "nome" : "Leila",
+        "dateOfBirth" : "1991-08-02T08:30:00.000Z",
+        "nasceuEmSp" : true,
+        "livros" : [
+                {
+                        "titulo" : "C#",
+                        "leu" : true
+                },
+                {
+                        "titulo" : "JavaScript",
+                        "leu" : true
+                },
+                {
+                        "titulo" : "CSS",
+                        "leu" : true
+                },
+                {
+                        "titulo" : "Clean Architecture",
+                        "leu" : true
+                }
+        ]
+}
+{
+        "_id" : ObjectId("5dc4aa874943c9002cb933c8"),
+        "nome" : "Marcia",
+        "dateOfBirth" : "1990-11-01T08:30:00.000Z",
+        "nasceuEmSp" : false,
+        "livros" : [
+                {
+                        "titulo" : "NodeJS",
+                        "leu" : true
+                },
+                {
+                        "titulo" : "MongoDB",
+                        "leu" : true
+                },
+                {
+                        "titulo" : "Clean Architecture",
+                        "leu" : true
+                }
+        ]
+}
+{
+        "_id" : ObjectId("5dc4aa874943c9002cb933c7"),
+        "nome" : "Lucia",
+        "dateOfBirth" : "1997-06-12T08:30:00.000Z",
+        "nasceuEmSp" : true,
+        "livros" : [
+                {
+                        "titulo" : "HTML",
+                        "leu" : true
+                },
+                {
+                        "titulo" : "JavaScript",
+                        "leu" : true
+                },
+                {
+                        "titulo" : "Java",
+                        "leu" : true
+                },
+                {
+                        "titulo" : "Clean Architecture",
+                        "leu" : true
+                }
+        ]
+}
+> db.aluna.updateMany({"nasceuEmSp":"true"}, ($set : {nasceuEmSp" : "false", "trocou" : true})}
+2019-11-07T22:48:31.973-0200 E  QUERY    [js] uncaught exception: SyntaxError: missing ) in parenthetical :
+@(shell):1:49
+> db.aluna.updateMany({"nasceuEmSp":"true"}, {$set : {"nasceuEmSp" : "false", "trocou" : true}})
+{ "acknowledged" : true, "matchedCount" : 10, "modifiedCount" : 10 }
+> db.alunas.remove({ "_id" : ObjectId("5dab90e10d61146c420264aa")  })
+WriteResult({ "nRemoved" : 0 })
+> db.aluna.find({ "_id" : ObjectId("5dab90e10d61146c420264aa")  })
+> db.aluna.remove({ "_id" : ObjectId("5dc4aa874943c9002cb933c7")
+... db.aluna.find({ "_id" : ObjectId("5dab90e10d61146c420264aa")  })^C
+
+> db.aluna.remove({ "_id" : ObjectId("5dab90e10d61146c420264aa")  })
+WriteResult({ "nRemoved" : 0 })
+>  db.aluna.remove({ "_id" : ObjectId("5dc4aa874943c9002cb933c7")
+... ^C
+
+> db.aluna.remove({ "_id" : ObjectId("5dc4aa874943c9002cb933c7")  })
+WriteResult({ "nRemoved" : 1 })
+>
